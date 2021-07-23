@@ -157,15 +157,18 @@
                 <h2>Menu</h2>
                 <p>Check Our Tasty Menu</p>
             </div>
+            <div class="row">
+                <?php
+                // component('./images/wp png.png','Washing Powder', '1 Kg', 150);
+                    $result = getData();
+                    while($row = mysqli_fetch_assoc($result)){
+                    component($row['food_image'], $row['food_name'],$row['food_price'],$row['food_description'], $row['food_id']);
+                    }
+            
+                ?>
+            </div>
 
-            <?php
-            // component('./images/wp png.png','Washing Powder', '1 Kg', 150);
-             $result = getData();
-            while($row = mysqli_fetch_assoc($result)){
-            component($row['food_image'], $row['food_name'],$row['food_price'],$row['food_description'], $row['food_id']);
-            }
-        
-            ?>
+            
 
 
         </div>

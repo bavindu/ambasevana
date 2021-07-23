@@ -57,9 +57,24 @@ if(isset($_POST['submit'])){
         //      $msg="<div class='alert alert-danger'>Already Booked</div>";
         //     }
         // else{
-            $stmt=mysqli_query($con,"insert into  booking(name,email,date,timeslot,mobile,des) values('$name','$email','$date','$timeslot','$mobile','$des')");
- 		//echo $stmt;
-			$msg="<div class='alert alert-success' id='sussMsg'>Booking Successful</div>";
+
+            
+        //     $stmt=mysqli_query($con,"insert into  booking(name,email,date,timeslot,mobile,des) values('$name','$email','$date','$timeslot','$mobile','$des')");
+ 		// //echo $stmt;
+        //     if($stmt) {
+        //         $msg="<div class='alert alert-success' id='sussMsg'>Booking Successful</div>";
+        //     } else {
+        //         $msg="<div class='alert alert-danger' id='errMsg'>Error</div>";
+        //     }
+
+            // !$con -> query("INSERT INTO Persons (name,email,date,timeslot,mobile,des) VALUES ('$name','$email','$date','$timeslot','$mobile','$des')");
+			if($con -> query("INSERT INTO booking (name,email,date,timeslot,mobile,des) VALUES ('$name','$email','$date','$timeslot','$mobile','$des')")){
+                $msg="<div class='alert alert-success' id='sussMsg'>Booking Successful</div>";
+            } else {
+                $msg="<div class='alert alert-danger' id='errMsg'>Error</div>";
+                echo("Error description: " . $con -> error);
+
+            }
 			// $bookings[]=$timeslot;
 			array_push($bookings, $timeslot);
         // }
