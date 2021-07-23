@@ -1,5 +1,5 @@
 <?php
-    //  session_start();
+//  session_start();
 
 ?>
 
@@ -17,9 +17,7 @@
 
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -35,6 +33,7 @@
 
     <!--  Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./main.css">
 
 </head>
 
@@ -58,9 +57,7 @@
                 <div class="logo mr-auto">
                     <h1 class="text-light"><a href="index2.html">Ambasewana Restaurant</a></h1>
                 </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span></button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
@@ -98,13 +95,13 @@
 
                         <!-- <i class="fas fa-shopping-cart"></i>
                             <?php
-                                // if(isset($_SESSION['cart'])){
-                                //     $count = count($_SESSION['cart']);
-                                //     echo " <span id='cartCount' class='text-warning' bg-light>$count</span>" ;
-                                // }
-                                // else{
-                                //     echo " <span id='cartCount' class='text-warning' bg-light>0</span>" ; 
-                                // }
+                            // if(isset($_SESSION['cart'])){
+                            //     $count = count($_SESSION['cart']);
+                            //     echo " <span id='cartCount' class='text-warning' bg-light>$count</span>" ;
+                            // }
+                            // else{
+                            //     echo " <span id='cartCount' class='text-warning' bg-light>0</span>" ; 
+                            // }
                             ?> -->
 
                         <!-- </h6> -->
@@ -121,21 +118,19 @@
 
 
                         <?php
-                            if(isset($_SESSION["customer_id"])){
-                                // echo "<li class='book-a-table text-center'><a href='cart.php'>Cart</a>
-                                // </li>";
-                                echo "<li class='book-a-table text-center'><a href='./order.php'>Profile</a>
+                        if (isset($_SESSION["customer_id"])) {
+                            // echo "<li class='book-a-table text-center'><a href='cart.php'>Cart</a>
+                            // </li>";
+                            echo "<li class='book-a-table text-center'><a href='./order.php'>Profile</a>
                                 </li>";
-                                echo "<li class='book-a-table text-center'><a href='../includes/logout.inc.php'>LogOut</a>
+                            echo "<li class='book-a-table text-center'><a href='../includes/logout.inc.php'>LogOut</a>
                                 </li>";
-                         
-                            }
-                            else{
-                                echo "<li class='book-a-table text-center'><a href='login.php'>LogIn</a>
+                        } else {
+                            echo "<li class='book-a-table text-center'><a href='login.php'>LogIn</a>
                                 </li>";
-                                echo "<li class='book-a-table text-center'><a href='signup.php'>SignUp</a>
+                            echo "<li class='book-a-table text-center'><a href='signup.php'>SignUp</a>
                                 </li>";
-                            }
+                        }
                         ?>
 
 
@@ -151,19 +146,18 @@
                                 <!-- </div> -->
                                 <!-- </div> -->
                                 <?php
-                            if(isset($_SESSION['cart'])){
-                                $count = count($_SESSION['cart']);
-                                echo " <div id='cartCount' class='text-danger text-left'>
+                                if (isset($_SESSION['cart'])) {
+                                    $count = count($_SESSION['cart']);
+                                    echo " <div id='cartCount' class='text-danger text-left'>
                                 <i class='fas fa-shopping-cart'>
                                  $count
                                 </i>
-                                </div>" ;
-                            }
-                            else{
-                                // echo " <span id='cartCount' class='text-danger' bg-light>0</span>" ; 
-                                echo " <div id='cartCount' class='text-danger text-left' ><i class='fas fa-shopping-cart'>0</i></div>" ;
-                            }
-                        ?>
+                                </div>";
+                                } else {
+                                    // echo " <span id='cartCount' class='text-danger' bg-light>0</span>" ; 
+                                    echo " <div id='cartCount' class='text-danger text-left' ><i class='fas fa-shopping-cart'>0</i></div>";
+                                }
+                                ?>
                         </li>
 
 
